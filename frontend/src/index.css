@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #0d0d0f;
+  color: #fafafa;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* Glass effect cards */
+.glass-card {
+  @apply bg-dark-card/80 backdrop-blur-md border border-dark-border rounded-xl;
+}
+
+.glass-card-hover {
+  @apply glass-card hover:bg-dark-hover transition-all duration-200;
+}
+
+/* Input styles */
+input, textarea, select {
+  @apply bg-dark-surface border border-dark-border rounded-lg px-4 py-2.5 text-white placeholder-zinc-500
+         focus:outline-none focus:ring-2 focus:ring-accent-primary/50 focus:border-accent-primary transition-all;
+}
+
+/* Button styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 justify-center;
+}
+
+.btn-primary {
+  @apply bg-accent-primary text-white hover:bg-accent-hover;
+}
+
+.btn-secondary {
+  @apply bg-dark-card border border-dark-border text-zinc-300 hover:bg-dark-hover hover:text-white;
+}
+
+.btn-danger {
+  @apply bg-red-500/20 text-red-400 border border-red-500/50 hover:bg-red-500/30;
+}
+
+.btn-ghost {
+  @apply text-zinc-400 hover:text-white hover:bg-dark-hover;
+}
+
+/* Status badges */
+.status-badge {
+  @apply px-2.5 py-1 rounded-full text-xs font-medium;
+}
+
+.status-created { @apply bg-status-created/20 text-status-created; }
+.status-assigned { @apply bg-status-assigned/20 text-status-assigned; }
+.status-inprogress { @apply bg-status-progress/20 text-status-progress; }
+.status-review { @apply bg-status-review/20 text-status-review; }
+.status-done { @apply bg-status-done/20 text-status-done; }
+
+/* Priority badges */
+.priority-badge {
+  @apply px-2 py-0.5 rounded text-xs font-medium;
+}
+
+.priority-low { @apply bg-priority-low/20 text-priority-low; }
+.priority-medium { @apply bg-priority-medium/20 text-priority-medium; }
+.priority-high { @apply bg-priority-high/20 text-priority-high; }
+.priority-urgent { @apply bg-priority-urgent/20 text-priority-urgent; }
+
+/* Team badges */
+.team-badge {
+  @apply px-2.5 py-1 rounded-lg text-xs font-medium;
+}
+
+.team-personal { @apply bg-team-personal/20 text-team-personal; }
+.team-dev { @apply bg-team-dev/20 text-team-dev; }
+.team-data { @apply bg-team-data/20 text-team-data; }
+
+/* Sidebar */
+.sidebar-link {
+  @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-zinc-400
+         hover:text-white hover:bg-dark-hover transition-all duration-200;
+}
+
+.sidebar-link.active {
+  @apply text-white bg-accent-primary/20 text-accent-primary;
+}
+
+/* Kanban */
+.kanban-column {
+  @apply flex-1 min-w-[280px] max-w-[320px] bg-dark-surface/50 rounded-xl p-3;
+}
+
+.kanban-card {
+  @apply glass-card-hover p-3 cursor-grab active:cursor-grabbing;
+}
+
+/* Charts */
+.chart-container {
+  @apply glass-card p-4;
+}
+
+/* Animations */
+.animate-in {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  @apply fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4;
+}
+
+.modal-content {
+  @apply glass-card w-full max-w-lg p-6 animate-slide-up;
+}
+
+/* Search */
+.search-bar {
+  @apply relative w-full max-w-2xl mx-auto;
+}
+
+.search-input {
+  @apply w-full bg-dark-card/80 backdrop-blur-md border border-dark-border rounded-xl
+         px-12 py-3.5 text-white placeholder-zinc-500
+         focus:outline-none focus:ring-2 focus:ring-accent-primary/50 focus:border-accent-primary;
+}
+
+/* Table */
+.table-container {
+  @apply w-full overflow-x-auto;
+}
+
+.data-table {
+  @apply w-full text-left;
+}
+
+.data-table th {
+  @apply px-4 py-3 text-xs font-medium text-zinc-400 uppercase tracking-wider border-b border-dark-border;
+}
+
+.data-table td {
+  @apply px-4 py-3 border-b border-dark-border/50;
+}
+
+.data-table tr:hover {
+  @apply bg-dark-hover/50;
+}
+
+/* Stats card */
+.stats-card {
+  @apply glass-card p-5 flex flex-col gap-2;
+}
+
+.stats-value {
+  @apply text-3xl font-bold text-white;
+}
+
+.stats-label {
+  @apply text-sm text-zinc-400;
+}
+
+/* Floating action button */
+.fab {
+  @apply fixed bottom-6 right-6 w-14 h-14 rounded-full bg-accent-primary text-white
+         shadow-lg shadow-accent-primary/25 flex items-center justify-center
+         hover:bg-accent-hover hover:scale-105 transition-all duration-200;
+}
